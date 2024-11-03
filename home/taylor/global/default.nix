@@ -86,11 +86,8 @@
       enableFishIntegration = true;
       options = ["--cmd cd"];
     }; # TODO alias this to cd
-
     git = {
       enable = true;
-      userName = "Nyxerproject";
-      userEmail = "nxyerproject@gmail.com";
     };
   };
 }

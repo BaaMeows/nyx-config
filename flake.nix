@@ -73,54 +73,10 @@
   in {
     nixpkgs.overlays = [inputs.niri.overlays.niri];
     nixosConfigurations = {
-      bottom = nixpkgs.lib.nixosSystem {
+      stacy = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./hosts/bottom
-          inputs.nixpkgs-xr.nixosModules.nixpkgs-xr
-          inputs.nixvim.nixosModules.nixvim
-          inputs.niri.nixosModules.niri
-          inputs.nixos-generators.nixosModules.all-formats
-          inputs.sddm-sugar-candy-nix.nixosModules.default
-          inputs.home-manager.nixosModules.home-manager
-          inputs.chaotic.nixosModules.default
-        ];
-        specialArgs = {
-          inherit inputs;
-        };
-      };
-      down = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./hosts/down
-          inputs.niri.nixosModules.niri
-          inputs.disko.nixosModules.disko
-          inputs.nixvim.nixosModules.nixvim
-          inputs.sddm-sugar-candy-nix.nixosModules.default
-          inputs.home-manager.nixosModules.home-manager
-        ];
-        specialArgs = {
-          inherit inputs;
-        };
-      };
-      muon = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./hosts/muon
-          inputs.niri.nixosModules.niri
-          inputs.nixvim.nixosModules.nixvim
-          inputs.disko.nixosModules.disko
-          inputs.sddm-sugar-candy-nix.nixosModules.default
-          inputs.home-manager.nixosModules.home-manager
-        ];
-        specialArgs = {
-          inherit inputs;
-        };
-      };
-      top = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./hosts/top
+          ./hosts/stacy
           inputs.home-manager.nixosModules.home-manager
           inputs.disko.nixosModules.disko
           inputs.nixvim.nixosModules.nixvim
@@ -139,7 +95,7 @@
           {
             system.stateVersion = "24.05";
             wsl.enable = true;
-            wsl.defaultUser = "nyx";
+            wsl.defaultUser = "taylor";
           }
         ];
         specialArgs = {

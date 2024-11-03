@@ -1,6 +1,6 @@
 {
   imports = [
-    ../../users/nyx.nix
+    ../../users/taylor.nix
     ../common
   ];
 
@@ -22,12 +22,12 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.nyx = import ../../home/nyx/strange;
+    users.taylor = import ../../home/taylor/strange;
   };
 
   environment = {
     sessionVariables = {
-      FLAKE = "/home/nyx/nyx-config";
+      FLAKE = "/home/taylor/nyx-config";
     };
   };
 
